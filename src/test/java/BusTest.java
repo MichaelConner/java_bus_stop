@@ -8,13 +8,14 @@ public class BusTest {
 
     Bus bus;
     Person person;
+    Person person2;
 
 
     @Before
     public void before(){
-        bus = new Bus("The Jewel", 10);
+        bus = new Bus("The Jewel", 1);
         person = new Person();
-
+        person2 = new Person();
     }
 
 
@@ -27,6 +28,20 @@ public class BusTest {
     public void busCanAddPassenger(){
         bus.addPassenger(person);
         assertEquals(1, bus.passengerCount());
+    }
+
+    @Test
+    public void busCanNotAddPassengerIfAtCapacity(){
+        bus.addPassenger(person);
+        bus.addPassenger(person2);
+        assertEquals(1, bus.passengerCount());
+    }
+
+    @Test
+    public void busCanRemovePassenger(){
+        bus.addPassenger(person);
+        bus.removePassenger();
+        assertEquals(0, bus.passengerCount());
     }
 
 

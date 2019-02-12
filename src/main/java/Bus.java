@@ -24,5 +24,9 @@ public class Bus {
         }
     }
 
+    public Person removePassenger(){
+        return this.passengerList.remove(0);
+    }
+
 
 }
