@@ -14,7 +14,15 @@ public class Bus {
         this.passengerList = new ArrayList<>();
     }
 
+    public int passengerCount(){
+        return this.passengerList.size();
+    }
 
+    public void addPassenger(Person person){
+        if (this.passengerCount() < this.capacity){
+            this.passengerList.add(person);
+        }
+    }
 
 
 }
