@@ -29,7 +29,7 @@ public class BusTest {
 
     @Test
     public void busCanAddPassenger(){
-        bus.addPassenger(busStop);
+        bus.addPassenger(person);
         assertEquals(1, bus.passengerCount());
     }
 
